@@ -24,60 +24,70 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/input_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="1. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="2 .입력해주세요." />
 
             <EditText
+                android:id="@+id/input_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="3. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="4. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="5. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="6. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="7. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="8. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:hint="9. 입력해주세요." />
 
             <EditText
+                android:id="@+id/input_10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -85,6 +95,7 @@
 
         </LinearLayout>
         <Button
+            android:id="@+id/output_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="다음"/>

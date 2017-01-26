@@ -15,7 +15,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Text_input_Activity"></activity>
+        <activity android:name=".Text_input_Activity" />
+        <activity android:name=".Text_Output_Activity"></activity>
     </application>
 
 </manifest>
