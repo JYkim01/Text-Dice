@@ -45,6 +45,7 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
         mInput10 = (EditText) findViewById(R.id.input_10);
 
         findViewById(R.id.output_button).setOnClickListener(this);
+        random();
     }
 
     @Override
