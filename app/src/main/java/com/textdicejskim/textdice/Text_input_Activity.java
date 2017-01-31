@@ -52,6 +52,8 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
         switch (v.getId()) {
             case R.id.output_button:
                 Intent intent = new Intent(this, Text_Output_Activity.class);
+                intent.putExtra("result",mInPut);
+                startActivity(intent);
         }
     }
     private void random() {
@@ -61,5 +63,6 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
         mInPut.add(mInput10);
 
         Collections.shuffle(mInPut);
+        return;
     }
 }
