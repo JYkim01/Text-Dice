@@ -1,16 +1,15 @@
 package com.textdicejskim.textdice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Collections;
 
 public class Text_input_Activity extends AppCompatActivity implements View.OnClickListener {
-
-    ArrayList<EditText> mInPut = new ArrayList<>();
 
     private EditText mInput1;
     private EditText mInput2;
@@ -22,6 +21,12 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
     private EditText mInput8;
     private EditText mInput9;
     private EditText mInput10;
+
+    ArrayList<EditText> mInPut;
+
+    public Text_input_Activity() {
+        this.mInPut = new ArrayList<>();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,13 +50,16 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.output_button :
-
-
+            case R.id.output_button:
+                Intent intent = new Intent(this, Text_Output_Activity.class);
         }
     }
-    public static String random () {
-        Random outRandom = new Random();
-        int numR = outRandom.nextInt(10)
+    private void random() {
+        mInPut.add(mInput1); mInPut.add(mInput2); mInPut.add(mInput3);
+        mInPut.add(mInput4); mInPut.add(mInput5); mInPut.add(mInput6);
+        mInPut.add(mInput7); mInPut.add(mInput8); mInPut.add(mInput9);
+        mInPut.add(mInput10);
+
+        Collections.shuffle(mInPut);
     }
 }
