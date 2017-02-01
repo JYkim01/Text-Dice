@@ -3,6 +3,7 @@ package com.textdicejskim.textdice;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 
@@ -22,10 +23,12 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
     private EditText mInput9;
     private EditText mInput10;
 
+    ArrayList<EditText> mEditTextList;
     ArrayList<EditText> mInPut;
 
     public Text_input_Activity() {
         this.mInPut = new ArrayList<>();
+        mEditTextList = new ArrayList<>();
     }
 
     @Override
@@ -44,28 +47,39 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
         mInput9 = (EditText) findViewById(R.id.input_9);
         mInput10 = (EditText) findViewById(R.id.input_10);
 
+        mEditTextList.add(mInput1);
+        mEditTextList.add(mInput2);
+        mEditTextList.add(mInput3);
+        mEditTextList.add(mInput4);
+        mEditTextList.add(mInput5);
+        mEditTextList.add(mInput6);
+        mEditTextList.add(mInput7);
+        mEditTextList.add(mInput8);
+        mEditTextList.add(mInput9);
+        mEditTextList.add(mInput10);
+
         findViewById(R.id.output_button).setOnClickListener(this);
-        random();
+
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.output_button:
+                isRandom();
                 Intent intent = new Intent(this, Text_Output_Activity.class);
-                intent.putExtra("result",mInPut.get(0).getText().toString());
+                intent.putExtra("result", mInPut.get(0).getText().toString());
                 finish();
                 startActivity(intent);
         }
     }
-    private void random() {
-        mInPut.add(mInput1); mInPut.add(mInput2); mInPut.add(mInput3);
-        mInPut.add(mInput4); mInPut.add(mInput5); mInPut.add(mInput6);
-        mInPut.add(mInput7); mInPut.add(mInput8); mInPut.add(mInput9);
-        mInPut.add(mInput10);
 
+    private void isRandom() {
+        for (EditText editText : mEditTextList) {
+            if (!TextUtils.isEmpty(editText.getText().toString())) {
+                mInPut.add(editText);
+            }
+        }
         Collections.shuffle(mInPut);
-        return;
-
     }
 }
