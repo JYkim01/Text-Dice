@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Text_input_Activity" />
-        <activity android:name=".Text_Output_Activity"></activity>
+        <activity android:name=".Text_Output_Activity" />
     </application>
 
 </manifest>

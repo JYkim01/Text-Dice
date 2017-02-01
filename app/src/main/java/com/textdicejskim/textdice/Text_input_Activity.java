@@ -53,7 +53,8 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
         switch (v.getId()) {
             case R.id.output_button:
                 Intent intent = new Intent(this, Text_Output_Activity.class);
-                intent.putExtra("result",mInPut);
+                intent.putExtra("result",mInPut.get(0).getText().toString());
+                finish();
                 startActivity(intent);
         }
     }
@@ -65,5 +66,6 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
 
         Collections.shuffle(mInPut);
         return;
+
     }
 }

@@ -18,9 +18,9 @@ public class Text_Output_Activity extends AppCompatActivity implements View.OnCl
         mOutputText = (TextView) findViewById(R.id.output_text);
 
         Intent intent = getIntent();
-        String text = intent.getStringExtra("text");
+        String result = intent.getExtras().getString("result");
 
-        mOutputText.setText(text);
+        mOutputText.setText(result);
 
         findViewById(R.id.return_button).setOnClickListener(this);
     }
@@ -28,7 +28,7 @@ public class Text_Output_Activity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        setResult(RESULT_OK,intent);
         finish();
     }
 }
