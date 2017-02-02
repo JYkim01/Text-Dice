@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,6 +67,12 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.output_button:
+                for (EditText editText : mEditTextList) {
+                    if (TextUtils.isEmpty(editText.getText().toString())) {
+                        Toast.makeText(this, "입력해주세요.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                }
                 isRandom();
                 Intent intent = new Intent(this, Text_Output_Activity.class);
                 intent.putExtra("result", mInPut.get(0).getText().toString());
@@ -73,6 +80,7 @@ public class Text_input_Activity extends AppCompatActivity implements View.OnCli
                 startActivity(intent);
         }
     }
+
 
     private void isRandom() {
         for (EditText editText : mEditTextList) {
